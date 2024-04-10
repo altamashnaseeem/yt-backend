@@ -12,7 +12,10 @@ config({ path: "./.env" });
 
 
 
-
+app.get("/demo", async(req,res)=>{
+  console.log("object")
+  res.status(200).json({message:"suceess"})
+})
 app.get("/extract-video", async (req, res) => {
   const videoUrl = req.query.videourl;
 
@@ -126,3 +129,4 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
+
